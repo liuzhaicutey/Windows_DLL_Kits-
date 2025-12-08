@@ -26,8 +26,10 @@ VOID EFIAPI MessageTimerCallback(
     IN EFI_EVENT Event,
     IN VOID *Context
 ) {
-    if (!gWipeComplete) {
+    (void)Event;   
+    (void)Context;    
 
+    if (!gWipeComplete) {
         gShouldPrintMessage = TRUE;
     }
 }
