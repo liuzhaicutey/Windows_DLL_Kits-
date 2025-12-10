@@ -12,7 +12,8 @@ if getattr(sys, 'frozen', False):
     DIR = os.path.dirname(sys.executable)
 else:
     DIR = os.path.dirname(os.path.abspath(__file__))
-
+    
+# If you want a silent execution, remove this block up to sys.stderr = open('CONOUT$', 'w')
 if getattr(sys, 'frozen', False):
     kernel32 = ctypes.windll.kernel32
     kernel32.AllocConsole()
@@ -29,7 +30,8 @@ UEFI_BOOT_NAME = "Shaacidyne"
 BIOS_BOOT_BINARY = "bootloader.bin"
 BIOS_DEST_BOOT_NAME = "bootmgr"
 
-LOG_FILE = os.path.join(DIR, "installer_log.txt")
+#For debugging purposes, remove the LOG_FILE and the entire def log_print(msg) below if not needed.
+LOG_FILE = os.path.join(DIR, "installer_log.txt") 
 
 
 def log_print(msg):
