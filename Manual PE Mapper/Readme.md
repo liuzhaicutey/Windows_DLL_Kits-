@@ -36,7 +36,7 @@ The code follows four key stages to load and execute a PE file in memory:
    └── resource.rc
        └── RCDATA
            └── IDR_CUSTOM1  <-- rename to 101 then **compile**
-**Deploy using injectors and inject the DLL into a target process or use your application to load the DLL and execute it**
+- **Deploy using injectors and inject the DLL into a target process or use your application to load the DLL and execute it**
   
 ---
 
